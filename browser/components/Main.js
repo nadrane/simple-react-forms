@@ -15,6 +15,10 @@ class Main extends React.Component {
   }
 
   render() {
+    const animalsToDisplay = this.state.view === 'all' ?
+      [...this.state.cats, ...this.state.dogs] :
+      this.state[this.state.view];
+
     return (
       <div className="App">
         <div className="App-header">
@@ -35,13 +39,11 @@ class Main extends React.Component {
 
         <div className="App-content container-fluid">
           {
-            (this.state.view === 'cats' || this.state.view === 'all') &&
-            <AnimalsList animals={this.state.cats} species={'kitty'} />
-          }
-
-          {
-            (this.state.view === 'dogs' || this.state.view === 'all') &&
-            <AnimalsList animals={this.state.dogs} species={'doggo'} />
+            this.state.view !== 'one' &&
+            <AnimalsList
+              animals={animalsToDisplay}
+              view={this.state.view}
+            />
           }
         </div>
       </div>

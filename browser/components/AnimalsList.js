@@ -1,9 +1,9 @@
 import React from 'react';
 import AnimalCard from './AnimalCard';
 
-const AnimalsList = ({ animals, species, selectAnimal }) => (
+const AnimalsList = ({ animals, view, selectAnimal }) => (
   <div className="row">
-    <h4>adopt a { species }!</h4>
+    <h4>{view}</h4>
     <div>
       {
         animals.map(animal => <AnimalCard
