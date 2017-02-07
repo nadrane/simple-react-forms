@@ -1,5 +1,13 @@
 import React from 'react';
 
+function UserList({users}) {
+  return (
+  <div>
+    {users.map((user, i) =><div key={i} className="col-xs-12">{user}</div>)}
+  </div>
+  );
+}
+
 class UserForm extends React.Component {
     constructor(props) {
       super(props);
