@@ -1,5 +1,13 @@
 import React from 'react';
 
+function UserList({users}) {
+  return (
+  <div>
+    {users.map((user, i) =><div key={i} className="col-xs-12">{user}</div>)}
+  </div>
+  );
+}
+
 class UserForm extends React.Component {
     constructor(props) {
       super(props);
@@ -82,7 +90,7 @@ class UserForm extends React.Component {
             <button disabled={!this.isFormValid()} className="btn btn-primary" type="submit">Make User</button>
           </form>
           <div className="row">
-            { this.props.users.map((user, i) => <div key={i} className="col-xs-12">{user}</div> )}
+            <UserList users={this.props.users} />
           </div>
         </div>
       );
