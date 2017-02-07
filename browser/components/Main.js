@@ -62,7 +62,7 @@ class UserForm extends React.Component {
     render() {
       return (
         <div className="container">
-          <div className="error">
+          <div className="errors">
             {this.showUsernameError() ? <p>Username must not be blank</p> : null}
             {this.showPasswordError() ? <p>Passwords must be the same</p> : null}
           </div>
