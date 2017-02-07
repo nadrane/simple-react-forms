@@ -26,7 +26,6 @@ class UserForm extends React.Component {
             <button className="btn btn-primary" type="submit">Make User</button>
           </form>
           <div className="row">
-            { this.props.users.map((user, i) => <div key={i} className="col-xs-12">{user}</div> )}
           </div>
         </div>
       );
@@ -36,12 +35,11 @@ class UserForm extends React.Component {
 class Main extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {users: []}
   }
 
   render() {
     return (
-      <UserForm users={this.state.users} />
+      <UserForm />
     );
   }
 }
